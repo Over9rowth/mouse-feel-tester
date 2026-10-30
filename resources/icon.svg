@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#18181b" />
+      <stop offset="100%" stop-color="#27272a" />
+    </linearGradient>
+    <linearGradient id="trace" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#a855f7" />
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="48" fill="url(#bg)" />
+  <!-- 极坐标网格 -->
+  <circle cx="128" cy="128" r="80" fill="none" stroke="#3f3f46" stroke-width="2" stroke-dasharray="4 4" />
+  <circle cx="128" cy="128" r="50" fill="none" stroke="#3f3f46" stroke-width="2" />
+  <line x1="128" y1="38" x2="128" y2="218" stroke="#3f3f46" stroke-width="2" />
+  <line x1="38" y1="128" x2="218" y2="128" stroke="#3f3f46" stroke-width="2" />
+  <!-- 鼠标拟合与锯齿轨迹 -->
+  <path d="M128 48 C180 48, 208 80, 208 128 C208 180, 170 208, 128 208 C80 208, 48 170, 48 128 C48 80, 80 48, 128 48" fill="none" stroke="url(#trace)" stroke-width="6" stroke-linecap="round" />
+  <!-- 顿挫抖动点 -->
+  <circle cx="196" cy="90" r="6" fill="#f43f5e" />
+  <circle cx="70" cy="160" r="6" fill="#f43f5e" />
+</svg>

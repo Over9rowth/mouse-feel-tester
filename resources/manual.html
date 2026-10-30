@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>鼠标手感仪 - 用户使用说明书</title>
+  <style>
+    @page { size: A4; margin: 20mm; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: #27272a;
+      line-height: 1.6;
+      font-size: 13px;
+    }
+    h1 { font-size: 24px; color: #09090b; border-bottom: 2px solid #0284c7; padding-bottom: 8px; margin-bottom: 16px; }
+    h2 { font-size: 16px; color: #0369a1; margin-top: 20px; margin-bottom: 8px; border-left: 4px solid #0284c7; padding-left: 8px; }
+    p { margin-bottom: 10px; }
+    ul { margin-bottom: 10px; padding-left: 20px; }
+    li { margin-bottom: 4px; }
+    .box { background: #f0f9ff; border: 1px solid #bae6fd; border-radius: 6px; padding: 12px; margin-bottom: 16px; }
+    .footer { margin-top: 30px; font-size: 11px; color: #71717a; text-align: center; border-top: 1px solid #e4e4e7; padding-top: 10px; }
+  </style>
+</head>
+<body>
+  <h1>鼠标手感仪 (MouseFeelTester) v0.1.0 使用说明书</h1>
+  <p><strong>出品</strong>：Over9rowth &nbsp;|&nbsp; <strong>定位</strong>：鼠标与鼠标垫物理手感与轨迹动力学体检台</p>
+  
+  <div class="box">
+    <strong>【核心理念与观测边界】</strong><br>
+    鼠标手感仪是一套将外设传感器、脚贴磨损与鼠标垫材质微观物理表现可视化的观测台。通过 Kåsa 代数最小二乘圆拟合消除画圆中心漂移，分离出真正由传感器微抖动与垫子颗粒造成的径向抖动残差，并量化甩枪急停超调率与回报率稳定性。100% 本机离线运行。
+  </div>
+
+  <h2>一、主要功能特性</h2>
+  <ul>
+    <li><strong>Kåsa 最小二乘圆拟合</strong>：自适应拟合任意画圆半径与圆心，精准计算真实径向残差均方根（RMS）。</li>
+    <li><strong>高频微抖动与顿挫提取</strong>：采用移动平均分离宏观椭圆偏心，精准定位超过 ±2.0px 的顿挫点与角度分布。</li>
+    <li><strong>两点甩枪急停量化</strong>：沿主轴投影与垂直横向偏离分析，精准输出超调量（Overshoot px）与回拉稳定耗时。</li>
+    <li><strong>回报率与丢包跳变检测</strong>：毫秒级高精度时间戳统计有效 Hz 与连续丢包跳变事件。</li>
+  </ul>
+
+  <h2>二、操作指南</h2>
+  <ul>
+    <li><strong>启动即用</strong>：打开程序自动展示内置磨损垫 vs 顺滑垫对比样本。</li>
+    <li><strong>实时实测</strong>：在下方画布按住鼠标左键均匀画圆或快速甩动直线急停，上方仪表盘毫秒级更新。</li>
+    <li><strong>导出数据与留档</strong>：点击右上角「导出体检数据 (JSON)」与「导出说明书 (PDF)」保存外设健康档案。</li>
+  </ul>
+
+  <div class="footer">
+    Copyright © 2026 Over9rowth. All Rights Reserved. 纯本机离线运行 · 守护外设物理真实手感
+  </div>
+</body>
+</html>

@@ -1,0 +1,100 @@
+{
+  "name": "mouse-feel-tester",
+  "productName": "鼠标手感仪",
+  "version": "1.0.0",
+  "private": true,
+  "description": "鼠标手感仪 — 随手画几个圈，就能测出鼠标丢不丢帧、移得稳不稳、手感顺不顺",
+  "author": "Over9rowth",
+  "license": "GPL-3.0-only",
+  "main": "dist/main/index.cjs",
+  "scripts": {
+    "build": "tsc --noEmit && node scripts/build.mjs",
+    "dev": "npm run build && electron .",
+    "test": "node --test tests/*.test.cjs",
+    "typecheck": "tsc --noEmit",
+    "smoke": "npm run build && node scripts/smoke.mjs",
+    "manual": "npm run build && electron scripts/make-manual-pdf.mjs",
+    "package": "npm run build && electron-forge package",
+    "make": "npm run build && electron-forge make"
+  },
+  "dependencies": {
+    "react": "19.1.1",
+    "react-dom": "19.1.1"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "7.10.2",
+    "@electron-forge/maker-squirrel": "7.10.2",
+    "@electron-forge/maker-zip": "7.10.2",
+    "@types/node": "24.10.1",
+    "@types/react": "19.1.16",
+    "@types/react-dom": "19.1.9",
+    "electron": "44.9.3",
+    "esbuild": "0.25.11",
+    "typescript": "5.9.3"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {
+        "asar": false,
+        "name": "MouseFeelTester",
+        "executableName": "MouseFeelTester",
+        "appBundleId": "local.instruments.mousefeeltester",
+        "appCopyright": "Copyright (C) 2026 Over9rowth (GPL-3.0)",
+        "appVersion": "0.1.0",
+        "icon": "resources/icon.ico",
+        "win32metadata": {
+          "CompanyName": "Over9rowth",
+          "FileDescription": "鼠标手感仪",
+          "ProductName": "鼠标手感仪",
+          "LegalCopyright": "Copyright (C) 2026 Over9rowth (GPL-3.0)",
+          "InternalName": "MouseFeelTester",
+          "OriginalFilename": "MouseFeelTester.exe"
+        },
+        "ignore": [
+          "^/tests",
+          "^/docs",
+          "^/src",
+          "^/scripts",
+          "^/resources",
+          "^/node_modules",
+          "^/out",
+          "^/out-",
+          "^/project_meta",
+          "^/SPEC\\.md$"
+        ]
+      },
+      "makers": [
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "win32"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "MouseFeelTester",
+            "title": "鼠标手感仪",
+            "setupIcon": "resources/icon.ico"
+          }
+        }
+      ]
+    }
+  },
+  "keywords": [
+    "electron",
+    "typescript",
+    "react",
+    "desktop-app",
+    "windows-app",
+    "offline-first",
+    "gplv3",
+    "mouse-tester",
+    "polling-rate",
+    "hardware-diagnostics",
+    "input-lag",
+    "gaming-mouse",
+    "circle-fitting",
+    "jitter-analysis"
+  ]
+}
